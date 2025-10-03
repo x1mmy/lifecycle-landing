@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -11,40 +11,47 @@ const Header: React.FC = () => {
       setIsScrolled(scrollTop > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="nav-brand">
           <Link to="/" className="logo">
-            LifeCycle.
+            LifeCycle{/* purple fullstop */}
+            <span style={{ color: "#8b5cf6" }}>.</span>
           </Link>
         </div>
         <nav className="nav-menu">
-          <Link 
-            to="/" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
           >
             Home
           </Link>
-          <Link 
-            to="/pricing" 
-            className={`nav-link ${location.pathname === '/pricing' ? 'active' : ''}`}
+          <Link
+            to="/pricing"
+            className={`nav-link ${
+              location.pathname === "/pricing" ? "active" : ""
+            }`}
           >
             Pricing
           </Link>
-          <Link 
-            to="/about" 
-            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+          <Link
+            to="/about"
+            className={`nav-link ${
+              location.pathname === "/about" ? "active" : ""
+            }`}
           >
             About us
           </Link>
-          <Link 
-            to="/contact" 
-            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+          <Link
+            to="/contact"
+            className={`nav-link ${
+              location.pathname === "/contact" ? "active" : ""
+            }`}
           >
             Contact
           </Link>
@@ -59,4 +66,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
