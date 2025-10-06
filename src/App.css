@@ -966,7 +966,7 @@ a:visited {
 
 /* About Page Styles */
 .about-hero-section {
-  background-color: #f5f5f5;
+  background-color: #e5e5e5;
   padding: 80px 0;
   text-align: center;
 }
@@ -998,7 +998,7 @@ a:visited {
 }
 
 .mission-section {
-  background-color: white;
+  background-color: f5f5f5;
   padding: 80px 0;
   text-align: center;
 }
@@ -1030,7 +1030,7 @@ a:visited {
 }
 
 .talk-section {
-  background-color: #f5f5f5;
+  background-color: #e5e5e5;
   padding: 80px 0;
 }
 
@@ -1114,7 +1114,7 @@ a:visited {
 
 /* Pricing Page Styles */
 .pricing-hero-section {
-  background-color: #f5f5f5;
+  background-color: #e5e5e5;
   padding: 80px 0;
   text-align: center;
 }
@@ -1133,7 +1133,7 @@ a:visited {
 }
 
 .pricing-plans-section {
-  background-color: white;
+  background-color: #e5e5e5;
   padding: 80px 0;
 }
 
@@ -1214,7 +1214,7 @@ a:visited {
 }
 
 .features-comparison-section {
-  background-color: #f5f5f5;
+  background-color: #e5e5e5;
   padding: 80px 0;
 }
 
@@ -1278,7 +1278,7 @@ a:visited {
 }
 
 .faq-section {
-  background-color: white;
+  background-color: #e5e5e5;
   padding: 80px 0;
   text-align: center;
 }
@@ -1298,7 +1298,7 @@ a:visited {
   font-size: 32px;
   color: #daa520;
   font-weight: bold;
-  box-shadow: 10px 10px 20px #1a1a1a, -10px -10px 20px #5a5a5a;
+  /* box-shadow: 10px 10px 20px #1a1a1a, -10px -10px 20px #5a5a5a; */
 
 }
 
