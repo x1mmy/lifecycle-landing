@@ -47,10 +47,6 @@ const Header: React.FC = () => {
             <span style={{ color: "#8b5cf6" }}>.</span>
           </Link>
         </div>
-        <nav className="nav-menu">
-          <Link
-            to="/"
-            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
         <nav className={`nav-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <Link
             to="/"
@@ -88,8 +84,8 @@ const Header: React.FC = () => {
           </Link>
         </nav>
         <div className="nav-actions">
-          <button className="btn-secondary">Log in</button>
-          <button className="btn-primary">Sign up</button>
+          <Link to="/" className="btn-secondary">Log in</Link>
+          <Link to="/contact" className="btn-primary">Sign up</Link>
         </div>
         <button
           className="mobile-menu-toggle"

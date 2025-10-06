@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import usersImg from '../assets/users.png';
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,14 +28,7 @@ const Contact: React.FC = () => {
         <div className="container">
           <div className="contact-content">
             <div className="contact-image">
-              <div className="contact-spheres">
-                <div className="sphere large"></div>
-                <div className="sphere medium-large"></div>
-                <div className="sphere medium"></div>
-                <div className="sphere small"></div>
-                <div className="sphere tiny"></div>
-                <div className="sphere extra-small"></div>
-              </div>
+              <img src={usersImg} alt="contact" />
             </div>
             <div className="contact-form-section">
               <h1 className="contact-title">Contact Us</h1>

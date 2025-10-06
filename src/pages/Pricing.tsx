@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import questionMarkImg from '../assets/question-mark.png';
+import paperAirplaneImg from '../assets/paper-airplane.png';
+import { Link } from 'react-router-dom';
 
 const Pricing: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -47,7 +50,7 @@ const Pricing: React.FC = () => {
                   teams
                 </p>
               </div>
-              <button className="plan-button btn-outline">Get Started with Basic</button>
+              <Link to="/contact" className="plan-button btn-outline">Get Started with Basic</Link>
             </div>
 
             {/* Pro Plan */}
@@ -65,7 +68,7 @@ const Pricing: React.FC = () => {
                   businesses
                 </p>
               </div>
-              <button className="plan-button btn-primary">Get Started with Pro</button>
+              <Link to="/contact" className="plan-button btn-primary">Get Started with Pro</Link>
             </div>
 
             {/* Business Plan */}
@@ -82,7 +85,7 @@ const Pricing: React.FC = () => {
                   advanced needs
                 </p>
               </div>
-              <button className="plan-button btn-outline">Get Started with Business</button>
+              <Link to="/contact" className="plan-button btn-outline">Get Started with Business</Link>
             </div>
           </div>
         </div>
@@ -180,7 +183,8 @@ const Pricing: React.FC = () => {
       <section className="faq-section">
         <div className="container">
           <div className="faq-icon">
-            <div className="question-mark">?</div>
+            {/* <div className="question-mark">?</div> */}
+            <img className="question-mark" src={questionMarkImg} alt="question-mark" />
           </div>
           <h2 className="faq-title">
             Frequently asked<br />
@@ -208,19 +212,20 @@ const Pricing: React.FC = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="pricing-cta-section">
+      {/* Final CTA Section */}
+      <section className="final-cta-section">
         <div className="container">
-          <div className="pricing-cta-content">
-            <div className="pricing-cta-text">
-              <h2 className="pricing-cta-title">
+          <div className="final-cta-content">
+            <div className="final-cta-text">
+              <h2 className="final-cta-title">
                 Get started with<br />
                 LifeCycle today
               </h2>
-              <p className="pricing-cta-description">Start reducing waste today</p>
-              <button className="btn-primary">Sign up now</button>
+              <p className="final-cta-description">Start reducing waste today</p>
+              <Link to="/contact" className="btn-primary">Sign up now</Link>
             </div>
-            <div className="pricing-cta-image">
-              <div className="paper-plane"></div>
+            <div className="final-cta-image">
+              <img src={paperAirplaneImg} alt="paper-plane" />
             </div>
           </div>
         </div>
