@@ -5,6 +5,7 @@ import secureWebImg from '../assets/secure-web.png';
 import lossImg from '../assets/loss.png';
 import usersImg from '../assets/users.png';
 import paperAirplaneImg from '../assets/paper-airplane.png';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
@@ -25,8 +26,8 @@ const Home: React.FC = () => {
                 perishable goods.
               </p>
               <div className="hero-buttons">
-                <button className="btn-primary">Get started</button>
-                <button className="btn-secondary">See how it works</button>
+                <Link to="/contact" className="btn-primary">Get started</Link>
+                <Link to="/contact" className="btn-secondary">See how it works</Link>
               </div>
             </div>
             <div className="hero-image">
@@ -51,7 +52,7 @@ const Home: React.FC = () => {
                 products expire and reduce waste<br />
                 across your business.
               </p>
-              <button className="btn-primary">Try for free</button>
+              <Link to="/contact" className="btn-primary">Try for free</Link>
             </div>
             <div className="feature-image">
               <img src={nodeTreeImg} alt="node tree" />
@@ -86,7 +87,7 @@ const Home: React.FC = () => {
                 security measures to keep your data protected<br />
                 and accessible only to you.
               </p>
-              <button className="btn-outline">Try now</button>
+              <Link to="/contact" className="btn-outline">Try now</Link>
             </div>
 
           </div>
@@ -102,10 +103,10 @@ const Home: React.FC = () => {
               <h2 className="security-title">Reduce waste, save money</h2>
               <p className="security-description">
               Stop losing money on expired products. LifeCycle helps you
-                track expiration dates, optimize inventory rotation, and cut
+                track expiration dates, optimise inventory rotation, and cut
                 waste by up to 40%. More savings, less stress.
               </p>
-              <button className="btn-outline">Try now</button>
+              <Link to="/contact" className="btn-outline">Try now</Link>
             </div>
             <div className="security-image">
               <img src={lossImg} alt="waste" />
@@ -139,7 +140,7 @@ const Home: React.FC = () => {
                 <p className="steps-subtitle">
                   Schedule a consultation and we'll help you set up the perfect solution for your business.
                 </p>
-                <button className="btn-primary">Sign up now</button>
+                <Link to="/contact" className="btn-primary">Sign up now</Link>
               </div>
             </div>
 
@@ -183,9 +184,9 @@ const Home: React.FC = () => {
           <div className="testimonials-grid">
             <div className="testimonial">
               <div className="testimonial-text">
-                <strong>Since implementing</strong><br />
-                LifeCycle, we've reduced<br />
-                inventory waste by 35%<br />
+                <strong>Since implementing </strong> 
+                LifeCycle, we've reduced
+                inventory waste by 35%
                 and saved thousands.
               </div>
               <div className="testimonial-rating">
@@ -195,9 +196,9 @@ const Home: React.FC = () => {
             </div>
             <div className="testimonial">
               <div className="testimonial-text">
-                <strong>The app</strong><br />
-                is so easy business<br />
-                tracking and prevents<br />
+                <strong>The app </strong> 
+                is so easy business
+                tracking and prevents
                 costly expired inventory.
               </div>
               <div className="testimonial-rating">
@@ -207,10 +208,10 @@ const Home: React.FC = () => {
             </div>
             <div className="testimonial">
               <div className="testimonial-text">
-                <strong>The application alerts</strong><br />
-                have transformed how<br />
-                we manage perishable<br />
-                goods. Highly recommend!
+                <strong>The application alerts </strong>
+                have transformed how
+                we manage perishable
+                goods. Highly recommend! 
               </div>
               <div className="testimonial-rating">
                 <div className="stars">★★★★★</div>
@@ -231,7 +232,7 @@ const Home: React.FC = () => {
                 LifeCycle today
               </h2>
               <p className="final-cta-description">Start reducing waste today</p>
-              <button className="btn-primary">Sign up now</button>
+              <Link to="/contact" className="btn-primary">Sign up now</Link>
             </div>
             <div className="final-cta-image">
               <img src={paperAirplaneImg} alt="paper-plane" />

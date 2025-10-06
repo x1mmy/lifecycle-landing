@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import paperAirplaneImg from '../assets/paper-airplane.png';
+import chatBubbleImg from '../assets/chat-bubble.png';
 
 const About: React.FC = () => {
   return (
@@ -73,32 +76,26 @@ const About: React.FC = () => {
               </h2>
             </div>
             <div className="talk-image">
-              <div className="talk-bubble">
-                <div className="bubble-lines">
-                  <div className="bubble-line long"></div>
-                  <div className="bubble-line medium"></div>
-                  <div className="bubble-line short"></div>
-                </div>
-              </div>
+              <img className="talk-bubble-img" src={chatBubbleImg} alt="talk-bubble" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="about-cta-section">
+{/* Final CTA Section */}
+<section className="final-cta-section">
         <div className="container">
-          <div className="about-cta-content">
-            <div className="about-cta-text">
-              <h2 className="about-cta-title">
+          <div className="final-cta-content">
+            <div className="final-cta-text">
+              <h2 className="final-cta-title">
                 Get started with<br />
                 LifeCycle today
               </h2>
-              <p className="about-cta-description">Start reducing waste today</p>
-              <button className="btn-primary">Sign up now</button>
+              <p className="final-cta-description">Start reducing waste today</p>
+              <Link to="/contact" className="btn-primary">Sign up now</Link>
             </div>
-            <div className="about-cta-image">
-              <div className="paper-plane"></div>
+            <div className="final-cta-image">
+              <img src={paperAirplaneImg} alt="paper-plane" />
             </div>
           </div>
         </div>
