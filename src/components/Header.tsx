@@ -43,9 +43,14 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="nav-brand">
           <Link to="/" className="logo">
-            LifeCycle.
+            LifeCycle{/* purple fullstop */}
+            <span style={{ color: "#8b5cf6" }}>.</span>
           </Link>
         </div>
+        <nav className="nav-menu">
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
         <nav className={`nav-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <Link
             to="/"
