@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header: React.FC = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,28 @@ const Header: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.classList.remove("mobile-menu-open");
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
@@ -28,6 +51,11 @@ const Header: React.FC = () => {
           <Link
             to="/"
             className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+        <nav className={`nav-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}>
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            onClick={closeMobileMenu}
           >
             Home
           </Link>
@@ -36,6 +64,7 @@ const Header: React.FC = () => {
             className={`nav-link ${
               location.pathname === "/pricing" ? "active" : ""
             }`}
+            onClick={closeMobileMenu}
           >
             Pricing
           </Link>
@@ -44,6 +73,7 @@ const Header: React.FC = () => {
             className={`nav-link ${
               location.pathname === "/about" ? "active" : ""
             }`}
+            onClick={closeMobileMenu}
           >
             About us
           </Link>
@@ -52,6 +82,7 @@ const Header: React.FC = () => {
             className={`nav-link ${
               location.pathname === "/contact" ? "active" : ""
             }`}
+            onClick={closeMobileMenu}
           >
             Contact
           </Link>
@@ -60,6 +91,17 @@ const Header: React.FC = () => {
           <button className="btn-secondary">Log in</button>
           <button className="btn-primary">Sign up</button>
         </div>
+        <button
+          className="mobile-menu-toggle"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </header>
   );
