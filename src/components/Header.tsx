@@ -46,66 +46,68 @@ const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-5">
         <div className="flex justify-between items-center py-4">
-          <div className="nav-brand">
-            <Link to="/" className="text-2xl font-bold text-gray-800">
-              LifeCycle{/* purple fullstop */}
-              <span className="text-purple-500">.</span>
-            </Link>
+          <div className="flex items-center space-x-8">
+            <div className="nav-brand">
+              <Link to="/" className="text-2xl font-bold text-gray-800">
+                LifeCycle{/* purple fullstop */}
+                <span className="text-purple-500">.</span>
+              </Link>
+            </div>
+            <nav
+              className={`hidden md:flex items-center space-x-8 ${
+                isMobileMenuOpen ? "mobile-open" : ""
+              }`}
+            >
+              <Link
+                to="/"
+                className={`font-medium transition-colors duration-300 ${
+                  location.pathname === "/"
+                    ? "text-primary-600"
+                    : "text-gray-800 hover:text-primary-600"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+              <Link
+                to="/pricing"
+                className={`font-medium transition-colors duration-300 ${
+                  location.pathname === "/pricing"
+                    ? "text-primary-600"
+                    : "text-gray-800 hover:text-primary-600"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                Pricing
+              </Link>
+              <Link
+                to="/about"
+                className={`font-medium transition-colors duration-300 ${
+                  location.pathname === "/about"
+                    ? "text-primary-600"
+                    : "text-gray-800 hover:text-primary-600"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                About us
+              </Link>
+              <Link
+                to="/contact"
+                className={`font-medium transition-colors duration-300 ${
+                  location.pathname === "/contact"
+                    ? "text-primary-600"
+                    : "text-gray-800 hover:text-primary-600"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+            </nav>
           </div>
-          <nav
-            className={`hidden md:flex items-center space-x-8 ${
-              isMobileMenuOpen ? "mobile-open" : ""
-            }`}
-          >
-            <Link
-              to="/"
-              className={`font-medium transition-colors duration-300 ${
-                location.pathname === "/"
-                  ? "text-primary-600"
-                  : "text-gray-800 hover:text-primary-600"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              Home
-            </Link>
-            <Link
-              to="/pricing"
-              className={`font-medium transition-colors duration-300 ${
-                location.pathname === "/pricing"
-                  ? "text-primary-600"
-                  : "text-gray-800 hover:text-primary-600"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              Pricing
-            </Link>
-            <Link
-              to="/about"
-              className={`font-medium transition-colors duration-300 ${
-                location.pathname === "/about"
-                  ? "text-primary-600"
-                  : "text-gray-800 hover:text-primary-600"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              About us
-            </Link>
-            <Link
-              to="/contact"
-              className={`font-medium transition-colors duration-300 ${
-                location.pathname === "/contact"
-                  ? "text-primary-600"
-                  : "text-gray-800 hover:text-primary-600"
-              }`}
-              onClick={closeMobileMenu}
-            >
-              Contact
-            </Link>
-          </nav>
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/"
-              className="bg-transparent text-primary-600 border-2 border-primary-600 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-600 hover:text-white"
+              className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary-600"
             >
               Log in
             </Link>
