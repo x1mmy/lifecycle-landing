@@ -117,7 +117,9 @@ const Header: React.FC = () => {
             </Link>
           </div>
           <button
-            className="md:hidden bg-none border-none cursor-pointer p-2 z-50"
+            className={`md:hidden bg-none border-none cursor-pointer p-2 z-50 transition-opacity duration-300 ${
+              isMobileMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -147,54 +149,104 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         <nav
-          className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center space-y-10 z-40 transform transition-transform duration-300 ${
+          className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white z-40 transform transition-transform duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <Link
-            to="/"
-            className={`text-2xl font-semibold transition-colors duration-300 ${
-              location.pathname === "/"
-                ? "text-primary-600"
-                : "text-gray-800 hover:text-primary-600"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Home
-          </Link>
-          <Link
-            to="/pricing"
-            className={`text-2xl font-semibold transition-colors duration-300 ${
-              location.pathname === "/pricing"
-                ? "text-primary-600"
-                : "text-gray-800 hover:text-primary-600"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/about"
-            className={`text-2xl font-semibold transition-colors duration-300 ${
-              location.pathname === "/about"
-                ? "text-primary-600"
-                : "text-gray-800 hover:text-primary-600"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            About us
-          </Link>
-          <Link
-            to="/contact"
-            className={`text-2xl font-semibold transition-colors duration-300 ${
-              location.pathname === "/contact"
-                ? "text-primary-600"
-                : "text-gray-800 hover:text-primary-600"
-            }`}
-            onClick={closeMobileMenu}
-          >
-            Contact
-          </Link>
+          {/* Header with Close Button */}
+          <div className="flex justify-between items-center p-6 border-b border-gray-100">
+            <div className="text-xl font-bold text-gray-800">
+              LifeCycle<span className="text-purple-500">.</span>
+            </div>
+            <button
+              onClick={closeMobileMenu}
+              className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-6 h-6 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col px-6 py-8">
+            <Link
+              to="/"
+              className={`text-xl font-semibold transition-all duration-300 py-4 px-4 rounded-lg mb-2 ${
+                location.pathname === "/"
+                  ? "text-primary-600 bg-primary-50 border-l-4 border-primary-600"
+                  : "text-gray-800 hover:text-primary-600 hover:bg-gray-50"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              to="/pricing"
+              className={`text-xl font-semibold transition-all duration-300 py-4 px-4 rounded-lg mb-2 ${
+                location.pathname === "/pricing"
+                  ? "text-primary-600 bg-primary-50 border-l-4 border-primary-600"
+                  : "text-gray-800 hover:text-primary-600 hover:bg-gray-50"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              Pricing
+            </Link>
+            <Link
+              to="/about"
+              className={`text-xl font-semibold transition-all duration-300 py-4 px-4 rounded-lg mb-2 ${
+                location.pathname === "/about"
+                  ? "text-primary-600 bg-primary-50 border-l-4 border-primary-600"
+                  : "text-gray-800 hover:text-primary-600 hover:bg-gray-50"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              About us
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-xl font-semibold transition-all duration-300 py-4 px-4 rounded-lg mb-2 ${
+                location.pathname === "/contact"
+                  ? "text-primary-600 bg-primary-50 border-l-4 border-primary-600"
+                  : "text-gray-800 hover:text-primary-600 hover:bg-gray-50"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Footer Actions */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-100 bg-gray-50">
+            <div className="flex flex-col space-y-3">
+              <Link
+                to="/"
+                className="w-full bg-transparent text-primary-600 border-2 border-primary-600 px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300 hover:bg-primary-600 hover:text-white"
+                onClick={closeMobileMenu}
+              >
+                Log in
+              </Link>
+              <Link
+                to="/contact"
+                className="w-full bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300 hover:bg-primary-700"
+                onClick={closeMobileMenu}
+              >
+                Sign up
+              </Link>
+            </div>
+          </div>
         </nav>
       </div>
     </header>

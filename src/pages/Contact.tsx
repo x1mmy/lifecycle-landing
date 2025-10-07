@@ -138,19 +138,19 @@ const Contact: React.FC = () => {
       {/* Contact Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
-          <div className="flex items-center gap-20">
-            <div className="flex-1 flex justify-center">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+            <div className="flex-1 flex justify-center order-2 md:order-1">
               <img
                 src={usersImg}
                 alt="contact"
-                className="max-w-full max-h-80 object-contain"
+                className="max-w-full max-h-48 md:max-h-80 object-contain"
               />
             </div>
-            <div className="flex-1">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
+            <div className="flex-1 order-1 md:order-2">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 text-center md:text-left">
                 Contact Us
               </h1>
-              <p className="text-lg text-gray-800 mb-10 leading-relaxed">
+              <p className="text-lg text-gray-800 mb-10 leading-relaxed text-center md:text-left">
                 Explore the future with us.
                 <br />
                 Feel free to get in touch.
@@ -158,17 +158,19 @@ const Contact: React.FC = () => {
 
               {/* Success Message - shown when form is submitted successfully */}
               {submitStatus === "success" ? (
-                <div className="p-12 bg-green-500 text-white rounded-2xl text-center min-h-80 flex flex-col justify-center items-center gap-6">
-                  <div className="text-6xl">✓</div>
-                  <h2 className="text-3xl font-bold m-0">Thank You!</h2>
-                  <p className="text-lg m-0 leading-relaxed">
+                <div className="p-8 md:p-12 bg-green-500 text-white rounded-2xl text-center min-h-60 md:min-h-80 flex flex-col justify-center items-center gap-4 md:gap-6">
+                  <div className="text-4xl md:text-6xl">✓</div>
+                  <h2 className="text-2xl md:text-3xl font-bold m-0">
+                    Thank You!
+                  </h2>
+                  <p className="text-base md:text-lg m-0 leading-relaxed">
                     Your message has been sent successfully.
                     <br />
                     We'll get back to you as soon as possible.
                   </p>
                   <button
                     onClick={() => setSubmitStatus("idle")}
-                    className="mt-4 px-8 py-3 bg-white text-green-500 border-none rounded-lg text-base font-semibold cursor-pointer"
+                    className="mt-4 px-6 md:px-8 py-3 bg-white text-green-500 border-none rounded-lg text-base font-semibold cursor-pointer"
                   >
                     Send Another Message
                   </button>

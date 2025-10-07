@@ -14,7 +14,7 @@ const Home: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="bg-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto">
-            <div className="flex items-center gap-20">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="flex-1">
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-800 mb-6">
                   Never let
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
                   <br />
                   perishable goods.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/contact"
                     className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5"
@@ -45,12 +45,12 @@ const Home: React.FC = () => {
                   </Link>
                 </div>
               </div>
-              <div className="flex-1 flex justify-center items-center overflow-hidden">
-                <div className="relative w-80 h-96">
+              <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
+                <div className="relative w-40 h-48 sm:w-48 sm:h-56 md:w-64 md:h-72 lg:w-80 lg:h-96">
                   <img
                     src={checklistImg}
                     alt="checklist"
-                    className="max-w-full max-h-80 object-contain"
+                    className="max-w-full max-h-48 sm:max-h-64 md:max-h-80 object-contain"
                   />
                 </div>
               </div>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="bg-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto shadow-lg">
-            <div className="flex items-center gap-20">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="flex-1">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Smart expiration tracking
@@ -84,11 +84,11 @@ const Home: React.FC = () => {
                   Try for free
                 </Link>
               </div>
-              <div className="flex-1 flex justify-center items-center overflow-hidden">
+              <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
                 <img
                   src={nodeTreeImg}
                   alt="node tree"
-                  className="max-w-full max-h-80 object-contain"
+                  className="max-w-full max-h-48 sm:max-h-64 md:max-h-80 object-contain"
                 />
               </div>
             </div>
@@ -100,12 +100,12 @@ const Home: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-20">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="flex-1 flex justify-center items-center overflow-hidden">
                 <img
                   src={secureWebImg}
                   alt="security"
-                  className="max-w-full max-h-80 object-contain"
+                  className="max-w-full max-h-48 sm:max-h-64 md:max-h-80 object-contain"
                 />
               </div>
               <div className="flex-1">
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-20">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="flex-1">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Reduce waste, save money
@@ -160,7 +160,7 @@ const Home: React.FC = () => {
                 <img
                   src={lossImg}
                   alt="waste"
-                  className="max-w-full max-h-80 object-contain"
+                  className="max-w-full max-h-48 sm:max-h-64 md:max-h-80 object-contain"
                 />
               </div>
             </div>
@@ -171,8 +171,8 @@ const Home: React.FC = () => {
       {/* How to Get Started Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
-          <div className="bg-white rounded-2xl p-12 md:p-16 max-w-6xl mx-auto shadow-lg">
-            <div className="flex items-start gap-24">
+          <div className="bg-white rounded-2xl p-8 md:p-16 max-w-6xl mx-auto shadow-lg">
+            <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-24">
               {/* LEFT SIDE: Image at top, then title/description/button below */}
               <div className="flex-1 flex flex-col items-start">
                 {/* User spheres image */}
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
                   <img
                     src={usersImg}
                     alt="users"
-                    className="max-w-xs max-h-80 object-contain"
+                    className="max-w-xs max-h-48 sm:max-h-64 md:max-h-80 object-contain"
                   />
                 </div>
 
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
               </div>
 
               {/* RIGHT SIDE: The 3 Steps */}
-              <div className="flex-1 flex items-center pt-10">
+              <div className="flex-1 flex items-center pt-0 lg:pt-10 mt-10 lg:mt-0">
                 <div className="w-full">
                   <div className="pb-10 mb-10 border-b border-gray-200">
                     <div className="text-3xl font-bold text-gray-800 mb-3">
@@ -300,9 +300,9 @@ const Home: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="bg-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto shadow-lg">
-            <div className="flex items-center gap-20">
-              <div className="flex-1">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
                   Get started with
                   <br />
                   LifeCycle today
@@ -312,16 +312,16 @@ const Home: React.FC = () => {
                 </p>
                 <Link
                   to="/contact"
-                  className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5"
+                  className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5 inline-block"
                 >
                   Sign up now
                 </Link>
               </div>
-              <div className="flex-1 flex justify-center items-center overflow-hidden">
+              <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
                 <img
                   src={paperAirplaneImg}
                   alt="paper-plane"
-                  className="max-w-full max-h-80 object-contain"
+                  className="max-w-full max-h-48 md:max-h-80 object-contain"
                 />
               </div>
             </div>

@@ -81,17 +81,17 @@ const About: React.FC = () => {
       {/* Let's Talk Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
-          <div className="flex items-center gap-10">
-            <div className="flex-1 pl-10">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1 md:pl-10">
               <h2 className="text-5xl md:text-6xl font-bold text-gray-800">
                 Let's talk
                 <br />
                 inventory.
               </h2>
             </div>
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex justify-center mt-10 md:mt-0">
               <img
-                className="max-w-full max-h-80 object-contain"
+                className="max-w-full max-h-48 md:max-h-80 object-contain"
                 src={chatBubbleImg}
                 alt="talk-bubble"
               />
@@ -104,9 +104,9 @@ const About: React.FC = () => {
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
           <div className="bg-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto shadow-lg">
-            <div className="flex items-center gap-20">
-              <div className="flex-1">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
                   Get started with
                   <br />
                   LifeCycle today
@@ -116,16 +116,16 @@ const About: React.FC = () => {
                 </p>
                 <Link
                   to="/contact"
-                  className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5"
+                  className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5 inline-block"
                 >
                   Sign up now
                 </Link>
               </div>
-              <div className="flex-1 flex justify-center items-center overflow-hidden">
+              <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
                 <img
                   src={paperAirplaneImg}
                   alt="paper-plane"
-                  className="max-w-full max-h-80 object-contain"
+                  className="max-w-full max-h-48 md:max-h-80 object-contain"
                 />
               </div>
             </div>
