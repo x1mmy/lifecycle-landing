@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
-          <div className="bg-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="flex-1">
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-800 mb-6">
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
                     to="/contact"
                     className="bg-primary-600 text-white border-none px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5"
                   >
-                    Get started
+                    Get Started
                   </Link>
                   <Link
                     to="/contact"
