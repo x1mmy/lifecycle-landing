@@ -246,17 +246,17 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 text-center">
+      <section className="bg-gray-200 py-20 text-center">
         <div className="max-w-7xl mx-auto px-5">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
               Testimonials
             </h2>
-            <p className="text-lg text-gray-800 mb-15">
+            <p className="text-lg text-gray-800 mb-16">
               People who think we do our job well for your brand
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-              <div className="bg-gray-50 p-8 rounded-xl text-left">
+              <div className="bg-white p-8 rounded-xl text-left shadow-lg">
                 <div className="text-base text-gray-800 leading-relaxed mb-6">
                   <strong>Since implementing </strong>
                   LifeCycle, we've reduced inventory waste by 35% and saved
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="font-semibold text-gray-800">Sarah Wilson</div>
               </div>
-              <div className="bg-gray-50 p-8 rounded-xl text-left">
+              <div className="bg-white p-8 rounded-xl text-left shadow-lg">
                 <div className="text-base text-gray-800 leading-relaxed mb-6">
                   <strong>The app </strong>
                   is so easy business tracking and prevents costly expired
@@ -280,7 +280,7 @@ const Home: React.FC = () => {
                   Mike Rodriguez
                 </div>
               </div>
-              <div className="bg-gray-50 p-8 rounded-xl text-left">
+              <div className="bg-white p-8 rounded-xl text-left shadow-lg">
                 <div className="text-base text-gray-800 leading-relaxed mb-6">
                   <strong>The application alerts </strong>
                   have transformed how we manage perishable goods. Highly

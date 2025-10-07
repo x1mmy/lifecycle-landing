@@ -121,7 +121,7 @@ const Pricing: React.FC = () => {
       {/* Compare Features Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-15">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-16">
             Compare Features
           </h2>
           <div className="max-w-5xl mx-auto">
@@ -251,20 +251,20 @@ const Pricing: React.FC = () => {
       {/* FAQ Section */}
       <section className="bg-gray-200 py-20 text-center">
         <div className="max-w-7xl mx-auto px-5">
-          <div className="mb-8">
+          <div className="mb-12">
             <img
-              className="w-50 h-50 mx-auto"
+              className="w-32 h-32 mx-auto"
               src={questionMarkImg}
               alt="question-mark"
             />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-15">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-16">
             Frequently asked
             <br />
             questions
           </h2>
           <div className="max-w-3xl mx-auto">
-            {faqs.map((faq, index) => (
+            {faqs.slice(0, 5).map((faq, index) => (
               <div key={index} className="border-b border-gray-300">
                 <button
                   className="w-full py-6 text-left text-lg font-semibold text-gray-800 flex justify-between items-center"
