@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import usersImg from "../assets/users.png";
+import SEO from "../components/SEO";
 
 const Contact: React.FC = () => {
   // State to store form data - holds the user's input
@@ -135,6 +136,15 @@ const Contact: React.FC = () => {
 
   return (
     <div className="contact-page">
+      <SEO 
+        title="Contact LifeCycle - Inventory Management Support & Sales"
+        description="Get in touch with LifeCycle's inventory management experts. Contact us for support, sales inquiries, or to schedule a demo of our expiration tracking software."
+        keywords="contact lifecycle, inventory management support, expiration tracking software demo, small business inventory help"
+        canonical="https://lifecycle.cloud/contact"
+        ogTitle="Contact LifeCycle - Inventory Management Support"
+        ogDescription="Get in touch with LifeCycle's inventory management experts. Contact us for support, sales inquiries, or to schedule a demo."
+        ogImage="https://lifecycle.cloud/package.png"
+      />
       {/* Contact Section */}
       <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-5">
@@ -142,7 +152,7 @@ const Contact: React.FC = () => {
             <div className="flex-1 flex justify-center order-2 md:order-1">
               <img
                 src={usersImg}
-                alt="contact"
+                alt="Contact LifeCycle team for inventory management consultation and support"
                 className="max-w-full max-h-48 md:max-h-80 object-contain"
               />
             </div>
