@@ -1,26 +1,109 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import questionMarkImg from "../assets/question-mark.png";
 import paperAirplaneImg from "../assets/paper-airplane.png";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const Pricing: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Add FAQ structured data
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does inventory expiration tracking work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LifeCycle automatically tracks product expiration dates and sends alerts before items expire, helping small businesses reduce waste and save money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of using inventory management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Benefits include reduced inventory waste (up to 40%), automated expiration alerts, better inventory rotation, cost savings, and improved compliance with food safety regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LifeCycle difficult to use for small businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, LifeCycle is designed specifically for small businesses with an intuitive interface that requires minimal training. Most users are up and running within minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get custom pricing for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer custom pricing for larger businesses or those with specific requirements. Contact our sales team to discuss your needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a trial version available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer a free trial so you can test our inventory expiration tracking software before committing to a paid plan."
+          }
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
   const faqs = [
-    "How does this work?",
-    "What are the benefits?",
-    "Is it difficult to use?",
-    "Can I have custom pricing?",
-    "Is there trial version available?",
-    "Where do I sign up?",
+    {
+      question: "How does inventory expiration tracking work?",
+      answer: "LifeCycle automatically tracks product expiration dates and sends alerts before items expire, helping small businesses reduce waste and save money."
+    },
+    {
+      question: "What are the benefits of using inventory management software?",
+      answer: "Benefits include reduced inventory waste (up to 40%), automated expiration alerts, better inventory rotation, cost savings, and improved compliance with food safety regulations."
+    },
+    {
+      question: "Is LifeCycle difficult to use for small businesses?",
+      answer: "No, LifeCycle is designed specifically for small businesses with an intuitive interface that requires minimal training. Most users are up and running within minutes."
+    },
+    {
+      question: "Can I get custom pricing for my business?",
+      answer: "Yes, we offer custom pricing for larger businesses or those with specific requirements. Contact our sales team to discuss your needs."
+    },
+    {
+      question: "Is there a trial version available?",
+      answer: "Yes, we offer a free trial so you can test our inventory expiration tracking software before committing to a paid plan."
+    }
   ];
 
   return (
     <div className="pricing-page">
+      <SEO 
+        title="Pricing - LifeCycle Plans & Features"
+        description="Affordable inventory expiration tracking software pricing for small businesses. Compare features and choose the perfect plan starting at $9/month. Free trial available."
+        keywords="inventory management software pricing, expiration tracking software cost, small business inventory pricing, lifecycle pricing plans"
+        canonical="https://lifecycle.cloud/pricing"
+        ogTitle="Inventory Management Software Pricing - LifeCycle"
+        ogDescription="Affordable inventory expiration tracking software pricing for small businesses. Compare features and choose the perfect plan starting at $9/month."
+        ogImage="https://lifecycle.cloud/package.png"
+      />
       {/* Pricing Hero Section */}
       <section className="bg-gray-200 py-20 text-center">
         <div className="max-w-7xl mx-auto px-5">
@@ -255,7 +338,7 @@ const Pricing: React.FC = () => {
             <img
               className="w-32 h-32 mx-auto"
               src={questionMarkImg}
-              alt="question-mark"
+              alt="Frequently asked questions about inventory expiration tracking software"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-16">
@@ -264,13 +347,13 @@ const Pricing: React.FC = () => {
             questions
           </h2>
           <div className="max-w-3xl mx-auto">
-            {faqs.slice(0, 5).map((faq, index) => (
+            {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-300">
                 <button
                   className="w-full py-6 text-left text-lg font-semibold text-gray-800 flex justify-between items-center"
                   onClick={() => toggleFaq(index)}
                 >
-                  {faq}
+                  {faq.question}
                   <span
                     className={`transition-transform duration-300 ${
                       openFaq === index ? "rotate-180" : ""
@@ -282,9 +365,7 @@ const Pricing: React.FC = () => {
                 {openFaq === index && (
                   <div className="pb-6 text-gray-800 leading-relaxed">
                     <p>
-                      This is a placeholder answer for the FAQ question. The
-                      actual content would be provided based on your specific
-                      requirements.
+                      {faq.answer}
                     </p>
                   </div>
                 )}
@@ -316,11 +397,11 @@ const Pricing: React.FC = () => {
                 </Link>
               </div>
               <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
-                <img
-                  src={paperAirplaneImg}
-                  alt="paper-plane"
-                  className="max-w-full max-h-48 md:max-h-80 object-contain"
-                />
+                  <img
+                    src={paperAirplaneImg}
+                    alt="Start your inventory management software subscription today"
+                    className="max-w-full max-h-48 md:max-h-80 object-contain"
+                  />
               </div>
             </div>
           </div>

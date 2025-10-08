@@ -2,10 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import paperAirplaneImg from "../assets/paper-airplane.png";
 import chatBubbleImg from "../assets/chat-bubble.png";
+import SEO from "../components/SEO";
 
 const About: React.FC = () => {
   return (
     <div className="about-page">
+      <SEO 
+        title="About LifeCycle - Inventory Management Solutions for Small Businesses"
+        description="Learn about LifeCycle's mission to help small businesses reduce inventory waste through smart expiration tracking software. Founded by students who understand the challenges."
+        keywords="about lifecycle, inventory management company, small business solutions, expiration tracking software, inventory waste reduction"
+        canonical="https://lifecycle.cloud/about"
+        ogTitle="About LifeCycle - Inventory Management Solutions"
+        ogDescription="Learn about LifeCycle's mission to help small businesses reduce inventory waste through smart expiration tracking software."
+        ogImage="https://lifecycle.cloud/package.png"
+      />
       {/* About Hero Section */}
       <section className="bg-gray-200 py-20 text-center">
         <div className="max-w-7xl mx-auto px-5">
@@ -93,7 +103,7 @@ const About: React.FC = () => {
               <img
                 className="max-w-full max-h-48 md:max-h-80 object-contain"
                 src={chatBubbleImg}
-                alt="talk-bubble"
+                alt="Contact LifeCycle team for inventory management consultation"
               />
             </div>
           </div>
@@ -124,7 +134,7 @@ const About: React.FC = () => {
               <div className="flex-1 flex justify-center items-center overflow-hidden mt-8 md:mt-0">
                 <img
                   src={paperAirplaneImg}
-                  alt="paper-plane"
+                  alt="Start your inventory management journey with LifeCycle"
                   className="max-w-full max-h-48 md:max-h-80 object-contain"
                 />
               </div>
