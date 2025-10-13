@@ -106,7 +106,7 @@ const Header: React.FC = () => {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              to="/"
+              to="https://app.lifecycle.cloud/login"
               className="text-gray-800 font-medium transition-colors duration-300 hover:text-primary-600"
             >
               Log in
