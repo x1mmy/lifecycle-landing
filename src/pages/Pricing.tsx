@@ -130,7 +130,7 @@ const Pricing: React.FC = () => {
                 </h3>
                 <div className="mb-4">
                   <span className="text-2xl text-gray-800 align-top">$</span>
-                  <span className="text-5xl font-bold text-gray-800">9</span>
+                  <span className="text-5xl font-bold text-gray-800">-</span>
                   <span className="text-base text-gray-800">/month</span>
                 </div>
                 <p className="text-base text-gray-800 mb-8 leading-relaxed">
@@ -156,7 +156,7 @@ const Pricing: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Pro</h3>
                 <div className="mb-4">
                   <span className="text-2xl text-gray-800 align-top">$</span>
-                  <span className="text-5xl font-bold text-gray-800">19</span>
+                  <span className="text-5xl font-bold text-gray-800">-</span>
                   <span className="text-base text-gray-800">/month</span>
                 </div>
                 <p className="text-base text-gray-800 mb-8 leading-relaxed">
@@ -181,7 +181,7 @@ const Pricing: React.FC = () => {
                 </h3>
                 <div className="mb-4">
                   <span className="text-2xl text-gray-800 align-top">$</span>
-                  <span className="text-5xl font-bold text-gray-800">99</span>
+                  <span className="text-5xl font-bold text-gray-800">-</span>
                   <span className="text-base text-gray-800">/month</span>
                 </div>
                 <p className="text-base text-gray-800 mb-8 leading-relaxed">
