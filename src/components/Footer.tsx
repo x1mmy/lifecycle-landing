@@ -10,10 +10,18 @@ const Footer: React.FC = () => {
             <div className="text-xl font-bold text-gray-800 mb-3">
               LifeCycle.
             </div>
+            <a 
+                href="mailto:team@lifecycle.cloud" 
+                className="text-gray-800 hover:text-primary-700 transition-colors duration-300"
+              >
+                team@lifecycle.cloud
+              </a>
             <div className="text-sm text-gray-600 leading-relaxed">
               2025 © LifeCycle
               <br />
               All rights reserved.
+              <br />
+
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 md:gap-x-20 md:gap-y-0 w-full md:w-auto">
