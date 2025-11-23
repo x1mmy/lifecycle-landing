@@ -205,18 +205,18 @@ const Home: React.FC = () => {
                   className="flex items-center gap-6 pt-4"
                   variants={itemVariants}
                 >
-                  <div className="flex -space-x-3">
+                  {/* <div className="flex -space-x-3">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 border-2 border-white"></div>
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-2 border-white"></div>
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-300 to-primary-500 border-2 border-white"></div>
-                  </div>
-                  <div>
+                  </div> */}
+                  {/* <div>
                     <div className="text-sm text-gray-600">Join 500+ businesses</div>
                     <div className="flex items-center gap-1">
                       <span className="text-yellow-400">★★★★★</span>
                       <span className="text-sm font-semibold text-gray-700 ml-1">5.0</span>
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               </motion.div>
 
