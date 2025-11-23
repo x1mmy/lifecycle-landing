@@ -115,11 +115,11 @@ const Pricing: React.FC = () => {
     <div className="pricing-page overflow-hidden">
       <SEO
         title="Pricing - LifeCycle Plans & Features"
-        description="Affordable inventory expiration tracking software pricing for small businesses. Compare features and choose the perfect plan starting at $9/month. Free trial available."
+        description="Affordable inventory expiration tracking software pricing for small businesses. Choose between Starter ($30/month) or Professional ($79/month). Free trial available."
         keywords="inventory management software pricing, expiration tracking software cost, small business inventory pricing, lifecycle pricing plans"
         canonical="https://lifecycle.cloud/pricing"
         ogTitle="Inventory Management Software Pricing - LifeCycle"
-        ogDescription="Affordable inventory expiration tracking software pricing for small businesses. Compare features and choose the perfect plan starting at $9/month."
+        ogDescription="Affordable inventory expiration tracking software pricing for small businesses. Choose between Starter ($30/month) or Professional ($79/month)."
         ogImage="https://lifecycle.cloud/package.png"
       />
 
@@ -177,9 +177,9 @@ const Pricing: React.FC = () => {
               Choose Your <span className="text-gradient">Plan</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Pricing tailored to your business size and needs.
+              Simple, transparent pricing tailored to your business needs.
               <br />
-              Launch pricing coming soon.
+              Start with a free 1-month trial.
             </p>
           </motion.div>
         </div>
@@ -189,7 +189,7 @@ const Pricing: React.FC = () => {
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-5">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -209,11 +209,11 @@ const Pricing: React.FC = () => {
                 </h3>
                 <div className="mb-6">
                   <span className="text-2xl text-gray-700 align-top">$</span>
-                  <span className="text-6xl font-bold text-gray-900">-</span>
+                  <span className="text-6xl font-bold text-gray-900">30</span>
                   <span className="text-lg text-gray-600">/month</span>
                 </div>
                 <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                  For individuals and small teams getting started
+                  Perfect for small stores, cafes, and boutiques
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
@@ -226,61 +226,30 @@ const Pricing: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Pro Plan */}
+            {/* Professional Plan */}
             <motion.div
-              className="group bg-gradient-to-br from-primary-600 to-emerald-500 p-10 rounded-3xl text-center relative border-2 border-primary-600 transform scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-600/40"
+              className="group bg-gradient-to-br from-primary-600 to-emerald-500 p-10 rounded-3xl text-center relative border-2 border-primary-600 transform md:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-600/40"
               variants={itemVariants}
               whileHover={{ y: -12, scale: 1.08 }}
             >
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white text-primary-600 px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white text-primary-600 px-6 py-2 rounded-full text-sm font-bold shadow-2xl border-2 border-primary-600">
                 Most Popular
               </div>
 
               <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold text-white mb-6">Pro</h3>
+                <h3 className="text-3xl font-display font-bold text-white mb-6">Professional</h3>
                 <div className="mb-6">
                   <span className="text-2xl text-white/90 align-top">$</span>
-                  <span className="text-6xl font-bold text-white">-</span>
+                  <span className="text-6xl font-bold text-white">79</span>
                   <span className="text-lg text-white/90">/month</span>
                 </div>
                 <p className="text-base text-white/90 mb-8 leading-relaxed">
-                  For startups and growing businesses
+                  For busier stores and growing businesses
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
                     className="w-full bg-white text-primary-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-gray-50 block shadow-2xl"
-                  >
-                    Get Started
-                  </Link>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Business Plan */}
-            <motion.div
-              className="group bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl text-center relative border-2 border-gray-100 hover:border-primary-200 transition-all duration-500 hover:shadow-2xl"
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold text-gray-900 mb-6">
-                  Business
-                </h3>
-                <div className="mb-6">
-                  <span className="text-2xl text-gray-700 align-top">$</span>
-                  <span className="text-6xl font-bold text-gray-900">-</span>
-                  <span className="text-lg text-gray-600">/month</span>
-                </div>
-                <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                  For organizations with advanced needs
-                </p>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/contact"
-                    className="w-full bg-white text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-primary-600 hover:text-white block shadow-lg hover:shadow-xl"
                   >
                     Get Started
                   </Link>
@@ -305,28 +274,29 @@ const Pricing: React.FC = () => {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
           >
-            {/* Basic Features */}
+            {/* Starter Features */}
             <motion.div
               className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
               <h3 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
-                Basic
+                Starter
               </h3>
               <div className="flex flex-col gap-4">
                 {[
-                  "Track up to 100 products",
-                  "Expiration alerts",
-                  "Email notifications",
-                  "Performance Metrics",
-                  "Basic reporting"
+                  "Up to 500 products",
+                  "Add, edit, and remove products easily",
+                  "Type barcode to find product info instantly",
+                  "Custom categories",
+                  "Expiration dashboard",
+                  "Email notifications (daily & weekly)"
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -345,22 +315,23 @@ const Pricing: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Pro Features */}
+            {/* Professional Features */}
             <motion.div
               className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary-600"
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
               <h3 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
-                Pro
+                Professional
               </h3>
               <div className="flex flex-col gap-4">
                 {[
-                  "Track up to 1,000 products",
-                  "Advanced alerts",
-                  "Team collaboration",
-                  "Custom categories",
-                  "Priority support"
+                  "Up to 3,000 products",
+                  "Everything in Starter, plus:",
+                  "Scan products with your phone camera",
+                  "Get instant alerts on your phone",
+                  "Priority support",
+                  "Advanced analytics"
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -370,44 +341,10 @@ const Pricing: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <div className="w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      ✓
+                    <div className={`w-6 h-6 ${index === 1 ? 'bg-transparent' : 'bg-primary-600'} text-${index === 1 ? 'gray-700' : 'white'} rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0`}>
+                      {index === 1 ? '' : '✓'}
                     </div>
-                    <span className="text-gray-700">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Business Features */}
-            <motion.div
-              className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-            >
-              <h3 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
-                Business
-              </h3>
-              <div className="flex flex-col gap-4">
-                {[
-                  "Unlimited products",
-                  "Task Management",
-                  "API access",
-                  "Custom integrations",
-                  "Dedicated support"
-                ].map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                  >
-                    <div className="w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      ✓
-                    </div>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className={`${index === 1 ? 'font-semibold' : ''} text-gray-700`}>{feature}</span>
                   </motion.div>
                 ))}
               </div>
