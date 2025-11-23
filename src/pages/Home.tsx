@@ -678,8 +678,8 @@ const Home: React.FC = () => {
                   </Link>
                 </motion.div>
                 <p className="text-white/80 mt-6 text-sm">
-                  No credit card required • Free 14-day trial
-                </p>
+                  Free 1 month trial
+                </p>  
               </motion.div>
 
               <motion.div

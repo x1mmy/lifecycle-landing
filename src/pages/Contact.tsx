@@ -412,7 +412,7 @@ const Contact: React.FC = () => {
               {
                 icon: "📧",
                 title: "Email Us",
-                description: "team@lifecycle.cloud",
+                description: "team@stashlabs.com.au",
                 detail: "We typically respond within 24 hours"
               },
               {
