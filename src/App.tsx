@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-gray-200">
+      <div className="min-h-screen flex flex-col bg-white">
         <Header />
         <main className="flex-1">
           <Routes>
