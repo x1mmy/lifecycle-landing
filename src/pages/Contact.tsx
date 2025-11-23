@@ -1,22 +1,20 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import usersImg from "../assets/users.png";
 import SEO from "../components/SEO";
 
 const Contact: React.FC = () => {
-  // State to store form data - holds the user's input
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // State to track submission status - shows loading/success/error messages
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Updates form data when user types in any field
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -27,28 +25,22 @@ const Contact: React.FC = () => {
     }));
   };
 
-  // Validates email format using a regular expression
   const isValidEmail = (email: string): boolean => {
-    // Regular expression to check for valid email format
-    // Checks for: text@text.text (with various allowed characters)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  // Handles form submission to Airtable
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevents page reload
-    setSubmitStatus("loading"); // Shows loading state
-    setErrorMessage(""); // Clears any previous errors
+    e.preventDefault();
+    setSubmitStatus("loading");
+    setErrorMessage("");
 
-    // Additional email validation before sending to Airtable
     if (!isValidEmail(formData.email)) {
       setSubmitStatus("error");
       setErrorMessage("Please enter a valid email address.");
-      return; // Stop the submission
+      return;
     }
 
-    // Validate that all fields are filled
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -56,25 +48,21 @@ const Contact: React.FC = () => {
     ) {
       setSubmitStatus("error");
       setErrorMessage("Please fill in all fields.");
-      return; // Stop the submission
+      return;
     }
 
     try {
-      // Get environment variables
-      // These are stored in your .env file and start with VITE_
       const AIRTABLE_TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN;
       const BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID;
       const TABLE_NAME =
         import.meta.env.VITE_AIRTABLE_TABLE_NAME || "Contact Forms";
 
-      // Check if environment variables are set
       if (!AIRTABLE_TOKEN || !BASE_ID) {
         throw new Error(
           "Airtable credentials not found. Please check your .env file."
         );
       }
 
-      // Send data to Airtable API
       const response = await fetch(
         `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(
           TABLE_NAME
@@ -92,7 +80,7 @@ const Contact: React.FC = () => {
                   Name: formData.name,
                   Email: formData.email,
                   Message: formData.message,
-                  Status: "New", // Automatically set status to "New"
+                  Status: "New",
                 },
               },
             ],
@@ -100,32 +88,26 @@ const Contact: React.FC = () => {
         }
       );
 
-      // Check if the request was successful
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error?.message || "Failed to submit form");
       }
 
-      // If successful, show success message
       setSubmitStatus("success");
 
-      // Clear the form after successful submission
       setFormData({
         name: "",
         email: "",
         message: "",
       });
 
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus("idle");
       }, 5000);
     } catch (error) {
-      // Handle any errors that occur during submission
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
 
-      // Show user-friendly error message
       if (error instanceof Error) {
         setErrorMessage(error.message);
       } else {
@@ -134,9 +116,27 @@ const Contact: React.FC = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    }
+  };
+
   return (
-    <div className="contact-page">
-      <SEO 
+    <div className="contact-page overflow-hidden">
+      <SEO
         title="Contact LifeCycle - Inventory Management Support & Sales"
         description="Get in touch with LifeCycle's inventory management experts. Contact us for support, sales inquiries, or to schedule a demo of our expiration tracking software."
         keywords="contact lifecycle, inventory management support, expiration tracking software demo, small business inventory help"
@@ -145,60 +145,154 @@ const Contact: React.FC = () => {
         ogDescription="Get in touch with LifeCycle's inventory management experts. Contact us for support, sales inquiries, or to schedule a demo."
         ogImage="https://lifecycle.cloud/package.png"
       />
-      {/* Contact Section */}
-      <section className="bg-gray-200 py-20">
-        <div className="max-w-7xl mx-auto px-5">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-            <div className="flex-1 flex justify-center order-2 md:order-1">
-              <img
-                src={usersImg}
-                alt="Contact LifeCycle team for inventory management consultation and support"
-                className="max-w-full max-h-48 md:max-h-80 object-contain"
-              />
-            </div>
-            <div className="flex-1 order-1 md:order-2">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 text-center md:text-left">
-                Contact Us
-              </h1>
-              <p className="text-lg text-gray-800 mb-10 leading-relaxed text-center md:text-left">
-                Explore the future with us.
-                <br />
-                Feel free to get in touch.
-              </p>
 
-              {/* Success Message - shown when form is submitted successfully */}
+      {/* Hero Section */}
+      <section className="relative min-h-[40vh] flex items-center bg-gradient-to-br from-white via-primary-50/30 to-white overflow-hidden py-20">
+        {/* Animated background blobs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-10 -left-20 w-72 h-72 bg-primary-200/30 rounded-full mix-blend-multiply filter blur-3xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-20 right-10 w-72 h-72 bg-emerald-200/20 rounded-full mix-blend-multiply filter blur-3xl"
+            animate={{
+              x: [0, -50, 0],
+              y: [0, 100, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-5 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="inline-block mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold border border-primary-200">
+                <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
+                Get In Touch
+              </span>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-6">
+              Contact <span className="text-gradient">Us</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Explore the future with us. Feel free to get in touch.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-32 bg-white relative">
+        <div className="max-w-7xl mx-auto px-5">
+          <motion.div
+            className="flex flex-col md:flex-row items-center gap-16 md:gap-20 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            {/* Image */}
+            <motion.div
+              className="flex-1 flex justify-center order-2 md:order-1"
+              variants={itemVariants}
+            >
+              <motion.div
+                animate={{
+                  y: [0, -15, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <img
+                  src={usersImg}
+                  alt="Contact LifeCycle team"
+                  className="max-w-full h-auto max-h-96 object-contain drop-shadow-2xl"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Form */}
+            <motion.div className="flex-1 order-1 md:order-2 w-full" variants={itemVariants}>
               {submitStatus === "success" ? (
-                <div className="p-8 md:p-12 bg-green-500 text-white rounded-2xl text-center min-h-60 md:min-h-80 flex flex-col justify-center items-center gap-4 md:gap-6">
-                  <div className="text-4xl md:text-6xl">✓</div>
-                  <h2 className="text-2xl md:text-3xl font-bold m-0">
+                <motion.div
+                  className="bg-gradient-to-br from-primary-500 to-emerald-500 text-white rounded-3xl p-12 text-center shadow-2xl"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.div
+                    className="text-6xl mb-6"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  >
+                    ✓
+                  </motion.div>
+                  <h2 className="text-3xl font-display font-bold mb-4">
                     Thank You!
                   </h2>
-                  <p className="text-base md:text-lg m-0 leading-relaxed">
+                  <p className="text-lg mb-8 text-white/90 leading-relaxed">
                     Your message has been sent successfully.
                     <br />
                     We'll get back to you as soon as possible.
                   </p>
-                  <button
+                  <motion.button
                     onClick={() => setSubmitStatus("idle")}
-                    className="mt-4 px-6 md:px-8 py-3 bg-white text-green-500 border-none rounded-lg text-base font-semibold cursor-pointer"
+                    className="px-8 py-4 bg-white text-primary-600 rounded-xl font-bold cursor-pointer transition-all duration-300 hover:bg-gray-50 shadow-lg"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Send Another Message
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ) : (
-                <>
-                  {/* Error Message - shown if something goes wrong */}
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-10 md:p-12 shadow-xl border border-gray-100">
                   {submitStatus === "error" && (
-                    <div className="p-4 mb-6 bg-red-500 text-white rounded-lg text-center">
+                    <motion.div
+                      className="p-4 mb-6 bg-red-500 text-white rounded-xl text-center font-semibold"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                    >
                       ✗ {errorMessage}
-                    </div>
+                    </motion.div>
                   )}
 
                   <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-                    <div className="flex flex-col gap-2">
+                    <motion.div
+                      className="flex flex-col gap-2"
+                      variants={itemVariants}
+                    >
                       <label
                         htmlFor="name"
-                        className="text-base font-semibold text-gray-800"
+                        className="text-base font-bold text-gray-900"
                       >
                         Name
                       </label>
@@ -206,19 +300,22 @@ const Contact: React.FC = () => {
                         type="text"
                         id="name"
                         name="name"
-                        className="p-4 border-2 border-gray-200 rounded-lg text-base font-inherit transition-colors duration-300 focus:outline-none focus:border-primary-600"
-                        placeholder="Full Name"
+                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
+                        placeholder="John Doe"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
                         disabled={submitStatus === "loading"}
                       />
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col gap-2">
+                    <motion.div
+                      className="flex flex-col gap-2"
+                      variants={itemVariants}
+                    >
                       <label
                         htmlFor="email"
-                        className="text-base font-semibold text-gray-800"
+                        className="text-base font-bold text-gray-900"
                       >
                         Email
                       </label>
@@ -226,51 +323,140 @@ const Contact: React.FC = () => {
                         type="email"
                         id="email"
                         name="email"
-                        className="p-4 border-2 border-gray-200 rounded-lg text-base font-inherit transition-colors duration-300 focus:outline-none focus:border-primary-600"
-                        placeholder="Email address"
+                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
+                        placeholder="john@example.com"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
                         disabled={submitStatus === "loading"}
                         pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
-                        title="Please enter a valid email address (e.g., name@example.com)"
+                        title="Please enter a valid email address"
                       />
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col gap-2">
+                    <motion.div
+                      className="flex flex-col gap-2"
+                      variants={itemVariants}
+                    >
                       <label
                         htmlFor="message"
-                        className="text-base font-semibold text-gray-800"
+                        className="text-base font-bold text-gray-900"
                       >
                         Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        className="p-4 border-2 border-gray-200 rounded-lg text-base font-inherit transition-colors duration-300 focus:outline-none focus:border-primary-600 resize-y min-h-32"
-                        placeholder="How can we get better?"
+                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 resize-y min-h-40 bg-white"
+                        placeholder="Tell us how we can help..."
                         rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
                         required
                         disabled={submitStatus === "loading"}
                       ></textarea>
-                    </div>
+                    </motion.div>
 
-                    <button
+                    <motion.button
                       type="submit"
-                      className="mt-4 p-4 bg-primary-600 text-white border-none rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="mt-4 p-4 bg-primary-600 text-white rounded-xl font-bold transition-all duration-300 hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40"
                       disabled={submitStatus === "loading"}
+                      whileHover={submitStatus !== "loading" ? { scale: 1.02, y: -2 } : {}}
+                      whileTap={submitStatus !== "loading" ? { scale: 0.98 } : {}}
+                      variants={itemVariants}
                     >
-                      {submitStatus === "loading"
-                        ? "Sending..."
-                        : "Send message"}
-                    </button>
+                      {submitStatus === "loading" ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <motion.span
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                            className="inline-block"
+                          >
+                            ⟳
+                          </motion.span>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </motion.button>
                   </form>
-                </>
+                </div>
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Info Cards Section */}
+      <section className="py-32 bg-gradient-to-b from-white to-gray-50 relative">
+        <div className="max-w-7xl mx-auto px-5">
+          <motion.h2
+            className="text-4xl md:text-5xl font-display font-bold text-gray-900 text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Other Ways to <span className="text-gradient">Connect</span>
+          </motion.h2>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            {[
+              {
+                icon: "📧",
+                title: "Email Us",
+                description: "team@stashlabs.com.au",
+                detail: "We typically respond within 24 hours"
+              },
+              {
+                icon: "💬",
+                title: "Live Chat",
+                description: "Coming Soon",
+                detail: "Real-time support for urgent questions"
+              },
+              {
+                icon: "📞",
+                title: "Schedule a Call",
+                description: "Book a Demo",
+                detail: "Get a personalized walkthrough"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 text-center relative overflow-hidden"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10">
+                  <motion.div
+                    className="text-6xl mb-6"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                  <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg text-primary-600 font-semibold mb-2">
+                    {item.description}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {item.detail}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </div>
