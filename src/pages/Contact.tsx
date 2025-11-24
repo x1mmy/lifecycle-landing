@@ -77,10 +77,10 @@ const Contact: React.FC = () => {
             records: [
               {
                 fields: {
-                  Name: formData.name,
-                  Email: formData.email,
-                  Message: formData.message,
-                  Status: "New",
+                  "Full Name": formData.name,
+                  "Email Address": formData.email,
+                  "Msg": formData.message,
+                  "Status": "New",
                 },
               },
             ],
@@ -300,7 +300,7 @@ const Contact: React.FC = () => {
                         type="text"
                         id="name"
                         name="name"
-                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
+                        className="p-4 border-2 text-gray-900 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={handleInputChange}
@@ -323,7 +323,7 @@ const Contact: React.FC = () => {
                         type="email"
                         id="email"
                         name="email"
-                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
+                        className="p-4 border-2 text-gray-900 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 bg-white"
                         placeholder="john@example.com"
                         value={formData.email}
                         onChange={handleInputChange}
@@ -347,7 +347,7 @@ const Contact: React.FC = () => {
                       <textarea
                         id="message"
                         name="message"
-                        className="p-4 border-2 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 resize-y min-h-40 bg-white"
+                        className="p-4 border-2 text-gray-900 border-gray-200 rounded-xl text-base font-inherit transition-all duration-300 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-200 resize-y min-h-40 bg-white"
                         placeholder="Tell us how we can help..."
                         rows={5}
                         value={formData.message}
