@@ -366,7 +366,7 @@ const About: React.FC = () => {
                   </Link>
                 </motion.div>
                 <p className="text-white/80 mt-6 text-sm">
-                  Free 1 month trial
+                  Free tier available — no credit card required
                 </p>
               </motion.div>
 

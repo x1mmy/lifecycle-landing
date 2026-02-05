@@ -47,10 +47,10 @@ const Pricing: React.FC = () => {
         },
         {
           "@type": "Question",
-          "name": "Is there a trial version available?",
+          "name": "Is there a free plan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we offer a free trial so you can test our inventory expiration tracking software before committing to a paid plan."
+            "text": "Yes, our Free tier lets you track up to 50 products at no cost. No credit card required. Upgrade to Starter or Professional when you need more."
           }
         }
       ]
@@ -88,8 +88,8 @@ const Pricing: React.FC = () => {
       answer: "Yes, we offer custom pricing for larger businesses or those with specific requirements. Contact our sales team to discuss your needs."
     },
     {
-      question: "Is there a trial version available?",
-      answer: "Yes, we offer a free trial so you can test our inventory expiration tracking software before committing to a paid plan."
+      question: "Is there a free plan?",
+      answer: "Yes, our Free tier lets you track up to 50 products at no cost. No credit card required. Upgrade to Starter or Professional when you need more."
     }
   ];
 
@@ -115,11 +115,11 @@ const Pricing: React.FC = () => {
     <div className="pricing-page overflow-hidden">
       <SEO
         title="Pricing - LifeCycle Plans & Features"
-        description="Affordable inventory expiration tracking software pricing for small businesses. Choose between Starter ($30/month) or Professional ($79/month). Free trial available."
-        keywords="inventory management software pricing, expiration tracking software cost, small business inventory pricing, lifecycle pricing plans"
+        description="Start free with up to 50 products. Starter from $9/month for 500 products with barcode scanning & email alerts. Professional $29/month for 3,000 products, analytics & priority support."
+        keywords="expiration tracking pricing, free inventory software, small business inventory pricing, lifecycle pricing plans, stop losing money expired stock"
         canonical="https://lifecycle.cloud/pricing"
-        ogTitle="Inventory Management Software Pricing - LifeCycle"
-        ogDescription="Affordable inventory expiration tracking software pricing for small businesses. Choose between Starter ($30/month) or Professional ($79/month)."
+        ogTitle="Pricing - LifeCycle | Free, Starter & Professional Plans"
+        ogDescription="Start free (50 products). Starter from $9/month (500 products). Professional $29/month (3,000 products, analytics & priority support)."
         ogImage="https://lifecycle.cloud/package.png"
       />
 
@@ -179,7 +179,7 @@ const Pricing: React.FC = () => {
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Simple, transparent pricing tailored to your business needs.
               <br />
-              Start with a free 1-month trial.
+              Start free — no credit card required.
             </p>
           </motion.div>
         </div>
@@ -189,13 +189,13 @@ const Pricing: React.FC = () => {
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-5">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
           >
-            {/* Starter Plan */}
+            {/* Free Plan */}
             <motion.div
               className="group bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl text-center relative border-2 border-gray-100 hover:border-primary-200 transition-all duration-500 hover:shadow-2xl"
               variants={itemVariants}
@@ -205,28 +205,26 @@ const Pricing: React.FC = () => {
 
               <div className="relative z-10">
                 <h3 className="text-3xl font-display font-bold text-gray-900 mb-6">
-                  Starter
+                  Free
                 </h3>
                 <div className="mb-6">
-                  <span className="text-2xl text-gray-700 align-top">$</span>
-                  <span className="text-6xl font-bold text-gray-900">30</span>
-                  <span className="text-lg text-gray-600">/month</span>
+                  <span className="text-6xl font-bold text-gray-900">$0</span>
                 </div>
                 <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                  Perfect for small stores, cafes, and boutiques
+                  Up to 50 products. No credit card required.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
                     className="w-full bg-white text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-primary-600 hover:text-white block shadow-lg hover:shadow-xl"
                   >
-                    Get Started
+                    Start Free
                   </Link>
                 </motion.div>
               </div>
             </motion.div>
 
-            {/* Professional Plan */}
+            {/* Starter Plan */}
             <motion.div
               className="group bg-gradient-to-br from-primary-600 to-emerald-500 p-10 rounded-3xl text-center relative border-2 border-primary-600 transform md:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-600/40"
               variants={itemVariants}
@@ -237,19 +235,50 @@ const Pricing: React.FC = () => {
               </div>
 
               <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold text-white mb-6">Professional</h3>
+                <h3 className="text-3xl font-display font-bold text-white mb-6">Starter</h3>
                 <div className="mb-6">
-                  <span className="text-2xl text-white/90 align-top">$</span>
-                  <span className="text-6xl font-bold text-white">79</span>
+                  <span className="text-2xl text-white/90 align-top">From $</span>
+                  <span className="text-6xl font-bold text-white">9</span>
                   <span className="text-lg text-white/90">/month</span>
                 </div>
                 <p className="text-base text-white/90 mb-8 leading-relaxed">
-                  For busier stores and growing businesses
+                  Up to 500 products with barcode scanning and email alerts.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
                     className="w-full bg-white text-primary-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-gray-50 block shadow-2xl"
+                  >
+                    Get Started
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Professional Plan */}
+            <motion.div
+              className="group bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl text-center relative border-2 border-gray-100 hover:border-primary-200 transition-all duration-500 hover:shadow-2xl"
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="relative z-10">
+                <h3 className="text-3xl font-display font-bold text-gray-900 mb-6">
+                  Professional
+                </h3>
+                <div className="mb-6">
+                  <span className="text-2xl text-gray-700 align-top">$</span>
+                  <span className="text-6xl font-bold text-gray-900">29</span>
+                  <span className="text-lg text-gray-600">/month</span>
+                </div>
+                <p className="text-base text-gray-600 mb-8 leading-relaxed">
+                  Up to 3,000 products with advanced analytics and priority support.
+                </p>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to="/contact"
+                    className="w-full bg-white text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-primary-600 hover:text-white block shadow-lg hover:shadow-xl"
                   >
                     Get Started
                   </Link>
@@ -274,29 +303,27 @@ const Pricing: React.FC = () => {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
           >
-            {/* Starter Features */}
+            {/* Free Features */}
             <motion.div
               className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
               <h3 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
-                Starter
+                Free
               </h3>
               <div className="flex flex-col gap-4">
                 {[
-                  "Up to 500 products",
-                  "Add, edit, and remove products easily",
-                  "Type barcode to find product info instantly",
-                  "Custom categories",
+                  "Up to 50 products",
+                  "Add, edit, and remove products",
                   "Expiration dashboard",
-                  "Email notifications (daily & weekly)"
+                  "Email alerts (all tiers)"
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -315,9 +342,43 @@ const Pricing: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Professional Features */}
+            {/* Starter Features */}
             <motion.div
               className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary-600"
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+            >
+              <h3 className="text-3xl font-display font-bold text-gray-900 mb-8 text-center">
+                Starter
+              </h3>
+              <div className="flex flex-col gap-4">
+                {[
+                  "Up to 500 products",
+                  "Everything in Free, plus:",
+                  "Barcode scanning",
+                  "Email alerts",
+                  "Custom categories"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <div className={`w-6 h-6 ${index === 1 ? 'bg-transparent text-gray-700' : 'bg-primary-600 text-white'} rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0`}>
+                      {index === 1 ? '' : '✓'}
+                    </div>
+                    <span className={`${index === 1 ? 'font-semibold' : ''} text-gray-700`}>{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Professional Features */}
+            <motion.div
+              className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
@@ -329,7 +390,6 @@ const Pricing: React.FC = () => {
                   "Up to 3,000 products",
                   "Everything in Starter, plus:",
                   "Scan products with your phone camera",
-                  "Get instant alerts on your phone",
                   "Priority support",
                   "Advanced analytics"
                 ].map((feature, index) => (
@@ -341,7 +401,7 @@ const Pricing: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <div className={`w-6 h-6 ${index === 1 ? 'bg-transparent' : 'bg-primary-600'} text-${index === 1 ? 'gray-700' : 'white'} rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0`}>
+                    <div className={`w-6 h-6 ${index === 1 ? 'bg-transparent text-gray-700' : 'bg-primary-600 text-white'} rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0`}>
                       {index === 1 ? '' : '✓'}
                     </div>
                     <span className={`${index === 1 ? 'font-semibold' : ''} text-gray-700`}>{feature}</span>
@@ -486,11 +546,11 @@ const Pricing: React.FC = () => {
                     to="/contact"
                     className="inline-block bg-white text-primary-600 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:bg-gray-50 shadow-2xl hover:shadow-white/20"
                   >
-                    Start Free Trial
+                    Start Free
                   </Link>
                 </motion.div>
                 <p className="text-white/80 mt-6 text-sm">
-                  Free 1 month trial
+                  Free tier available — no credit card required
                 </p>
               </motion.div>
 

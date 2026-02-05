@@ -79,12 +79,12 @@ const Home: React.FC = () => {
   return (
     <div className="home-page overflow-hidden">
       <SEO
-        title="Never Let Inventory Expire Again - LifeCycle Expiration Tracking Software"
-        description="Never let inventory expire again with LifeCycle's automated expiration date tracking. Perfect for small businesses managing perishable products. Cut waste by up to 40%."
-        keywords="never let inventory expire, inventory expiration tracking software, product expiration management, inventory waste reduction, small business inventory system, expiration date tracking, perishable goods management"
+        title="Stop Losing Money on Expired Stock - LifeCycle"
+        description="Track what's expiring this week so you can sell it, discount it, or remove it before it costs you. Stop losing money on expired stock you didn't catch in time."
+        keywords="stop losing money on expired stock, expired inventory cost, expiration tracking, reduce inventory waste, small business money lost, product expiration alerts"
         canonical="https://lifecycle.cloud/"
-        ogTitle="Never Let Inventory Expire Again - LifeCycle"
-        ogDescription="Never let inventory expire again with LifeCycle's automated expiration date tracking. Perfect for small businesses managing perishable products."
+        ogTitle="Stop Losing Money on Expired Stock - LifeCycle"
+        ogDescription="Track what's expiring this week so you can sell it, discount it, or remove it before it costs you."
         ogImage="https://lifecycle.cloud/package.png"
       />
 
@@ -150,27 +150,22 @@ const Home: React.FC = () => {
                 >
                   <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold border border-primary-200">
                     <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-                    Smart Inventory Management
+                    Track what's expiring before it costs you
                   </span>
                 </motion.div>
 
                 <motion.h1
-                  className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] text-gray-900"
+                  className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.15] text-gray-900"
                   variants={itemVariants}
                 >
-                  Never let
-                  <br />
-                  <span className="text-gradient">inventory</span>
-                  <br />
-                  expire again.
+                  Stop losing money on expired stock you didn't catch in time.
                 </motion.h1>
 
                 <motion.p
                   className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl"
                   variants={itemVariants}
                 >
-                  Monitor product lifecycles and get timely alerts before items expire.
-                  Perfect for small businesses managing perishable goods and optimizing inventory.
+                  Track what's expiring this week so you can sell it, discount it, or remove it before it costs you.
                 </motion.p>
 
                 <motion.div
@@ -185,7 +180,7 @@ const Home: React.FC = () => {
                       to="/contact"
                       className="inline-block bg-primary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-primary-700 shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40"
                     >
-                      Get Started Free
+                      Start Free
                     </Link>
                   </motion.div>
                   <motion.div
@@ -674,11 +669,11 @@ const Home: React.FC = () => {
                     to="/contact"
                     className="inline-block bg-white text-primary-600 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:bg-gray-50 shadow-2xl hover:shadow-white/20"
                   >
-                    Start Free Trial
+                    Start Free
                   </Link>
                 </motion.div>
                 <p className="text-white/80 mt-6 text-sm">
-                  Free 1 month trial
+                  Free tier available — no credit card required
                 </p>  
               </motion.div>
 

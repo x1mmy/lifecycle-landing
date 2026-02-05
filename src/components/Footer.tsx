@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
               LifeCycle<span className="text-primary-500">.</span>
             </div>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Smart inventory management for modern businesses. Never let products expire again.
+              Stop losing money on expired stock. Track what's expiring so you can sell it, discount it, or remove it before it costs you.
             </p>
             <motion.a
               href="mailto:team@stashlabs.com.au"
