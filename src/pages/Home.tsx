@@ -168,6 +168,13 @@ const Home: React.FC = () => {
                   Track what's expiring this week so you can sell it, discount it, or remove it before it costs you.
                 </motion.p>
 
+                <motion.p
+                  className="text-lg text-primary-700 font-medium max-w-xl"
+                  variants={itemVariants}
+                >
+                  What if you got an email every morning telling you exactly what expires this week?
+                </motion.p>
+
                 <motion.div
                   className="flex flex-col sm:flex-row gap-4 pt-4"
                   variants={itemVariants}
@@ -256,6 +263,64 @@ const Home: React.FC = () => {
             />
           </div>
         </motion.div>
+      </section>
+
+      {/* Questions that resonate */}
+      <section className="py-20 md:py-28 bg-white relative border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-5 text-center">
+          <motion.h2
+            className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Sound familiar?
+          </motion.h2>
+          <motion.div
+            className="space-y-6 text-left max-w-2xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={containerVariants}
+          >
+            <motion.p
+              className="text-lg md:text-xl text-gray-700 leading-relaxed"
+              variants={itemVariants}
+            >
+              How much stock did you throw away last month?
+            </motion.p>
+            <motion.p
+              className="text-lg md:text-xl text-gray-900 font-semibold leading-relaxed border-l-4 border-primary-500 pl-4"
+              variants={itemVariants}
+            >
+              One expired product sold to a customer can cost you more than a year of LifeCycle.
+            </motion.p>
+          </motion.div>
+          <motion.p
+            className="mt-8 text-sm text-gray-500 max-w-xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            The risk of selling expired isn't just waste—it's reputation, trust, and liability.
+          </motion.p>
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-block bg-primary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-primary-700 shadow-lg shadow-primary-600/30"
+            >
+              Start Free
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* Smart Expiration Tracking Section */}
