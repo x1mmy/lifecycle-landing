@@ -79,12 +79,12 @@ const Home: React.FC = () => {
   return (
     <div className="home-page overflow-hidden">
       <SEO
-        title="Never Let Inventory Expire Again - LifeCycle Expiration Tracking Software"
-        description="Never let inventory expire again with LifeCycle's automated expiration date tracking. Perfect for small businesses managing perishable products. Cut waste by up to 40%."
-        keywords="never let inventory expire, inventory expiration tracking software, product expiration management, inventory waste reduction, small business inventory system, expiration date tracking, perishable goods management"
+        title="Stop Losing Money on Expired Stock - LifeCycle"
+        description="Track what's expiring this week so you can sell it, discount it, or remove it before it costs you. Stop losing money on expired stock you didn't catch in time."
+        keywords="stop losing money on expired stock, expired inventory cost, expiration tracking, reduce inventory waste, small business money lost, product expiration alerts"
         canonical="https://lifecycle.cloud/"
-        ogTitle="Never Let Inventory Expire Again - LifeCycle"
-        ogDescription="Never let inventory expire again with LifeCycle's automated expiration date tracking. Perfect for small businesses managing perishable products."
+        ogTitle="Stop Losing Money on Expired Stock - LifeCycle"
+        ogDescription="Track what's expiring this week so you can sell it, discount it, or remove it before it costs you."
         ogImage="https://lifecycle.cloud/package.png"
       />
 
@@ -150,27 +150,29 @@ const Home: React.FC = () => {
                 >
                   <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold border border-primary-200">
                     <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-                    Smart Inventory Management
+                    Track what's expiring before it costs you
                   </span>
                 </motion.div>
 
                 <motion.h1
-                  className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] text-gray-900"
+                  className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.15] text-gray-900"
                   variants={itemVariants}
                 >
-                  Never let
-                  <br />
-                  <span className="text-gradient">inventory</span>
-                  <br />
-                  expire again.
+                  Stop losing money on expired stock you didn't catch in time.
                 </motion.h1>
 
                 <motion.p
                   className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl"
                   variants={itemVariants}
                 >
-                  Monitor product lifecycles and get timely alerts before items expire.
-                  Perfect for small businesses managing perishable goods and optimizing inventory.
+                  Track what's expiring this week so you can sell it, discount it, or remove it before it costs you.
+                </motion.p>
+
+                <motion.p
+                  className="text-lg text-primary-700 font-medium max-w-xl"
+                  variants={itemVariants}
+                >
+                  What if you got an email every morning telling you exactly what expires this week?
                 </motion.p>
 
                 <motion.div
@@ -185,7 +187,7 @@ const Home: React.FC = () => {
                       to="/contact"
                       className="inline-block bg-primary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-primary-700 shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40"
                     >
-                      Get Started Free
+                      Start Free
                     </Link>
                   </motion.div>
                   <motion.div
@@ -261,6 +263,64 @@ const Home: React.FC = () => {
             />
           </div>
         </motion.div>
+      </section>
+
+      {/* Questions that resonate */}
+      <section className="py-20 md:py-28 bg-white relative border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-5 text-center">
+          <motion.h2
+            className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Sound familiar?
+          </motion.h2>
+          <motion.div
+            className="space-y-6 text-left max-w-2xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={containerVariants}
+          >
+            <motion.p
+              className="text-lg md:text-xl text-gray-700 leading-relaxed"
+              variants={itemVariants}
+            >
+              How much stock did you throw away last month?
+            </motion.p>
+            <motion.p
+              className="text-lg md:text-xl text-gray-900 font-semibold leading-relaxed border-l-4 border-primary-500 pl-4"
+              variants={itemVariants}
+            >
+              One expired product sold to a customer can cost you more than a year of LifeCycle.
+            </motion.p>
+          </motion.div>
+          <motion.p
+            className="mt-8 text-sm text-gray-500 max-w-xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            The risk of selling expired isn't just waste—it's reputation, trust, and liability.
+          </motion.p>
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-block bg-primary-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-primary-700 shadow-lg shadow-primary-600/30"
+            >
+              Start Free
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* Smart Expiration Tracking Section */}
@@ -674,11 +734,11 @@ const Home: React.FC = () => {
                     to="/contact"
                     className="inline-block bg-white text-primary-600 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:bg-gray-50 shadow-2xl hover:shadow-white/20"
                   >
-                    Start Free Trial
+                    Start Free
                   </Link>
                 </motion.div>
                 <p className="text-white/80 mt-6 text-sm">
-                  Free 1 month trial
+                  Free tier available — no credit card required
                 </p>  
               </motion.div>
 
